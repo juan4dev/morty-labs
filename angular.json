@@ -20,7 +20,7 @@
           "options": {
             "outputPath": {
               "base": "../wwwroot",
-              "browser": ""
+              "browser": "morty-labs"
             },
             "index": "src/index.html",
             "browser": "src/main.ts",
