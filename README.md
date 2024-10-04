@@ -41,3 +41,8 @@ export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideClientHydration(), provideExperimentalZonelessChangeDetection()]
 };
 ```
+
+### 4.3 uninstall zone.js
+```bash
+npm uninstall zone.js
+```
