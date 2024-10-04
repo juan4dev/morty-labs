@@ -19,12 +19,13 @@ ng new morty-labs --directory .
 npm install @ngrx/signals
 ```
 
-### 4.1 Update angular.json to use OnPush change detection
+### 4.1 Update angular.json to use OnPush change detection and other defaults
 ```json
 "schematics": {
     "@schematics/angular:component": {
         "style": "scss",
-        "changeDetection": "OnPush"
+        "changeDetection": "OnPush",
+        "skipTests": true
     }
 },
 ```
