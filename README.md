@@ -134,3 +134,32 @@ To create the required folders and `index.ts` files, run the following command:
 node -e "const fs = require('fs'); const path = require('path'); const root = 'src/app'; const folders = ['adapters', 'components', 'services', 'models', 'store']; folders.forEach(folder => { const fullPath = path.join(root, folder); fs.mkdir(fullPath, { recursive: true }, (err) => { if (err) throw err; fs.writeFile(path.join(fullPath, 'index.ts'), '', (err) => { if (err) throw err; console.log('Creado: ' + path.join(fullPath, 'index.ts')); }); }); });"
 
 ```
+
+## HTTP Client Configuration with Fetch
+
+In this project, we configure the Angular HTTP Client to use the modern Fetch API for handling HTTP requests instead of the older `XMLHttpRequest`.
+
+### Why Use Fetch?
+
+The Fetch API offers several advantages over `XMLHttpRequest`:
+- **Simplified API**: Fetch is easier to use and promises-based, which integrates better with `async/await`.
+- **Streaming Support**: Fetch allows for streaming responses, making it ideal for handling large responses without loading everything into memory at once.
+- **Improved Error Handling**: Errors are more consistently handled in Fetch, improving reliability in error scenarios.
+- **Performance**: Fetch can offer better performance and lower resource consumption in some cases.
+
+### Configuration
+
+To enable Fetch in your Angular project, update the `app.config.ts` file with the following configuration:
+
+```typescript
+import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient, withFetch } from '@angular/common/http';
+// ... Other imports
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+     // ... Other providers
+    provideHttpClient(withFetch())  // Enable Fetch for HTTP requests
+  ],
+};
+```
