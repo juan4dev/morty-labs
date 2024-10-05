@@ -26,6 +26,6 @@ jobs:
       run: npm run build -- --configuration=production --base-href=/morty-labs/  # Build the project and set the base href
 
     - name: Deploy to GitHub Pages
-      run: npx ngh --dir=dist/morty-labs  # Use angular-cli-ghpages to deploy to GitHub Pages
+      run: npx ngh --dir=dist/morty-labs/browser  # Use angular-cli-ghpages to deploy to GitHub Pages
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's automatic token to push to the repository
