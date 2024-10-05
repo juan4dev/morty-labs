@@ -47,3 +47,11 @@ export const appConfig: ApplicationConfig = {
 ```bash
 npm uninstall zone.js
 ```
+
+### 5 Update tsconfig.json to use baseUrl and paths
+```json
+"baseUrl": "./",
+"paths": {
+    "@app/*": ["src/app/*"],
+}
+```
