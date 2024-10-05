@@ -4,6 +4,10 @@ This project is an Angular template used to experiment with the latest features 
 
 ## Common Commands
 
+### Generate a new containers
+```bash
+ng generate component containers/rick-and-morty/rick-and-morty-container --inline-style --flat
+```
 ```bash
 ng g service services/character
 ```
@@ -162,4 +166,28 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch())  // Enable Fetch for HTTP requests
   ],
 };
+```
+
+## Project Structure: Core vs Shared
+```
+src
+├───app
+│   ├───core
+│   │   ├───services
+│   │   ├───guards
+│   │   └───components
+│   ├───shared
+│   │   ├───components
+│   │   ├───pipes
+│   │   └───directives
+│   ├───containers
+│   │   ├───container1
+│   │   │   ├───core
+│   │   │   │   ├───services
+│   │   │   │   └───guards
+│   │   │   └───shared
+│   │   │       ├───components
+│   │   │       ├───pipes
+│   │   │       └───directives
+└───styles
 ```
