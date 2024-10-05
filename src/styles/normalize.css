@@ -1,0 +1,23 @@
+/* source: https://x.com/souporserious/status/1746311121949356469 */
+* {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+body {
+  /* ensure that the body covers the entire viewport */
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
