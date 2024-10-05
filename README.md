@@ -32,6 +32,24 @@ npm install @ngrx/signals
         "style": "scss",
         "changeDetection": "OnPush",
         "skipTests": true
+    },
+    "@schematics/angular:service": {
+        "skipTests": true
+    },
+    "@schematics/angular:directive": {
+        "skipTests": true
+    },
+    "@schematics/angular:guard": {
+        "skipTests": true
+    },
+    "@schematics/angular:pipe": {
+        "skipTests": true
+    },
+    "@schematics/angular:class": {
+        "skipTests": true
+    },
+    "@schematics/angular:module": {
+        "skipTests": true
     }
 },
 ```
