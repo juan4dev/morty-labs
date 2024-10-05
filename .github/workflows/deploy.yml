@@ -1,0 +1,31 @@
+name: Deploy Angular App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment when pushing to the 'main' branch
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 'lts/Iron'
+        check-latest: true
+
+    - name: Install dependencies
+      run: npm ci  # Install the dependencies
+
+    - name: Build Angular app
+      run: npm run build -- --prod --base-href=/morty-labs/  # Build the project and set the base href
+
+    - name: Deploy to GitHub Pages
+      run: npx ngh --dir=dist/morty-labs  # Use angular-cli-ghpages to deploy to GitHub Pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's automatic token to push to the repository
