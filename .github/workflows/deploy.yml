@@ -18,14 +18,12 @@ jobs:
       with:
         node-version: 'lts/Iron'
         check-latest: true
+        cache: "npm"
 
     - name: Install dependencies
       run: npm ci  # Install the dependencies
 
-    - name: Build Angular app
-      run: npm run build -- --configuration=production --base-href=/morty-labs/  # Build the project and set the base href
-
-    - name: Deploy to GitHub Pages
-      run: npx ngh --dir=dist/morty-labs/browser  # Use angular-cli-ghpages to deploy to GitHub Pages
+    - name: Prepare and deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub's automatic token to push to the repository
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: npm run ng --deploy --base-href=/morty-labs/ --dir=dist/morty-labs/browser --name="juan4dev" --email="72524993+juan4dev@users.noreply.github.com"
