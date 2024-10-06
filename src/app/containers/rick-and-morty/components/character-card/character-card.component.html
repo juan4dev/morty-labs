@@ -1,0 +1,13 @@
+@let characterLocal = character(); @if (characterLocal) {
+<div class="character-card">
+  <p>{{ characterLocal.name }}</p>
+
+  <img
+    class="character-image"
+    [ngSrc]="characterLocal.image"
+    width="200"
+    height="200"
+    [alt]="characterLocal.name"
+  />
+</div>
+}
