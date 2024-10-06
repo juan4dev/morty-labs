@@ -26,4 +26,4 @@ jobs:
     - name: Prepare and deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: npm run ng --deploy --base-href=/morty-labs/ --name="juan4dev" --email="72524993+juan4dev@users.noreply.github.com"
+      run: npm run ng deploy --base-href=/morty-labs/ --name="juan4dev" --email="72524993+juan4dev@users.noreply.github.com"
