@@ -12,6 +12,12 @@ export enum Gender {
   'UNKNOWN' = 'unknown',
 }
 
+export enum Status {
+  'ALIVE' = 'Alive',
+  'DEAD' = 'Dead',
+  'UNKNOWN' = 'unknown',
+}
+
 export interface CharacterInfo {
   info: Info;
   results: Character[];
@@ -20,7 +26,7 @@ export interface CharacterInfo {
 export interface LinkedElement {
   name: string;
   link: string;
-}
+} 
 
 export interface Origin extends LinkedElement {}
 export interface Location extends LinkedElement {}
@@ -28,7 +34,7 @@ export interface Location extends LinkedElement {}
 export interface Character {
   id: number;
   name: string;
-  status: string;
+  status: Status;
   species: string;
   type: string;
   gender: Gender;
@@ -43,7 +49,7 @@ export interface Character {
 export const emptyCharacter: Character = {
   id: 0,
   name: '',
-  status: '',
+  status: Status.UNKNOWN,
   species: '',
   type: '',
   gender: Gender.MALE,
